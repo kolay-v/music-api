@@ -1,0 +1,49 @@
+{
+  "name": "vk-music",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/main.ts  --extensions '.ts,.js'",
+    "build": "babel src -d dist --extensions '.ts,.js'",
+    "build:docs": "apidoc -i src/ -o docs",
+    "build:all": "npm-run-all --parallel build build:docs",
+    "lint:code": "eslint src/ --ext .js,.ts",
+    "type-check": "tsc --noEmit",
+    "lint": "npm-run-all --parallel lint:code type-check"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
+    "m3u8": "tedconf/node-m3u8",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.0.4",
+    "@types/request": "^2.48.1",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "apidoc": "^0.17.7",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-with-typescript": "^7.0.0",
+    "eslint-config-xo-typescript": "^0.14.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "3.4.5",
+    "xo": "^0.24.0"
+  },
+  "browserslist": "node >= 10"
+}
